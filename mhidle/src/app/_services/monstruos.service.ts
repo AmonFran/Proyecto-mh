@@ -15,7 +15,7 @@ export class MonstruosService {
   ];
 
   // azar: Monstruo = this.monstruos[Math.floor(Math.random() * this.monstruos.length)];
-  azar: Monstruo = this.monstruos[0];
+  azar: Monstruo = this.monstruos[1];
 
   constructor() { }
 
@@ -41,4 +41,11 @@ export class MonstruosService {
     return this.azar;
   }
 
+  getMonstruo(nombreMonstruo: string) {
+    let monstruoBuscado: Monstruo = new Monstruo(0, "", "", "", "");
+    this.monstruos.forEach((monstruo) => {
+      if (monstruo.nombre == nombreMonstruo) monstruoBuscado = monstruo
+    })
+    return monstruoBuscado;
+  }
 }
