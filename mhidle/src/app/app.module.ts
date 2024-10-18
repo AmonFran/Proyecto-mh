@@ -12,6 +12,9 @@ import { ClasicoComponent } from './clasico/clasico.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { HeaderComponent } from './core/header/header.component';
 import { MenuComponent } from './core/menu/menu.component';
+import { MonstruosService } from './_services/monstruos.service';
+import { ConectarAppService } from './conectar-app.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,13 +27,17 @@ import { MenuComponent } from './core/menu/menu.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
     MatInputModule,
     NoopAnimationsModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [
+    ConectarAppService,
+    MonstruosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

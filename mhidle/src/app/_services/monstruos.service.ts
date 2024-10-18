@@ -1,21 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Monstruo } from '../_models/monstruo.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class MonstruosService {
   monstruos: Monstruo[] = [
-    new Monstruo(0, 'Lagriacus', 'Leviatan', 'Electrico', 'Monster Hunter 3'),
-    new Monstruo(1, 'Anjanath', 'Wyvern bruto', 'Fuego', 'Monster Hunter World'),
-    new Monstruo(2, 'Barroth', 'Wyvern bruto', 'Agua', 'Monster Hunter 3'),
-    new Monstruo(3, 'Bazelgeuse', 'Wyvern volador', 'Fuego', 'Monster Hunter World'),
-    new Monstruo(4, 'Deviljho', 'Wyvern bruto', 'Draco', 'Monster Hunter 3'),
-    new Monstruo(5, 'Diablos', 'Wyvern volador', 'Ninguno', 'Monster Hunter'),
+    // new Monstruo(0, 'Lagriacus', 'Leviatan', 'Electrico', 'Monster Hunter 3'),
+    // new Monstruo(1, 'Anjanath', 'Wyvern bruto', 'Fuego', 'Monster Hunter World'),
+    // new Monstruo(2, 'Barroth', 'Wyvern bruto', 'Agua', 'Monster Hunter 3'),
+    // new Monstruo(3, 'Bazelgeuse', 'Wyvern volador', 'Fuego', 'Monster Hunter World'),
+    // new Monstruo(4, 'Deviljho', 'Wyvern bruto', 'Draco', 'Monster Hunter 3'),
+    // new Monstruo(5, 'Diablos', 'Wyvern volador', 'Ninguno', 'Monster Hunter'),
   ];
 
   // azar: Monstruo = this.monstruos[Math.floor(Math.random() * this.monstruos.length)];
-  azar: Monstruo = this.monstruos[1];
+  azar: Monstruo = this.monstruos[0];
 
   constructor() { }
 
@@ -47,5 +45,10 @@ export class MonstruosService {
       if (monstruo.nombre == nombreMonstruo) monstruoBuscado = monstruo
     })
     return monstruoBuscado;
+  }
+
+  cargarMonstruos(listaMonstruos: Monstruo[]) {
+    this.monstruos = listaMonstruos.slice();
+    this.azar = this.monstruos[1];
   }
 }

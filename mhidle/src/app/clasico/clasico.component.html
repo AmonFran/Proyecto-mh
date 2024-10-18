@@ -1,5 +1,3 @@
-<p>clasico works!</p>
-
 <div style="margin: 50px;">
     <mat-form-field appearance="fill" class="buscador">
         <input id="intento" type="text" matInput [formControl]="nombresControl" [matAutocomplete]="auto"
@@ -15,7 +13,6 @@
 </div>
 
 <div>
-
     <table mat-table [dataSource]="dataSource.reverse()" [hidden]="dataSource.length==0" class="tabla">
         <ng-container matColumnDef="nombre">
             <th mat-header-cell *matHeaderCellDef class="celdaH p0"> Nombre </th>
